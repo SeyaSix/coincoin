@@ -10,6 +10,113 @@ body {
     line-height: 1.6; /* Espacement entre les lignes pour une meilleure lisibilité */
     color: #333; /* Couleur de texte gris foncé */
     background-color: #f8f9fa; /* Couleur de fond gris très clair */
+    scrollbar-width: none; /* Masque la barre de scroll sur Firefox */
+    -ms-overflow-style: none; /* Masque la barre de scroll sur Internet Explorer */
+}
+
+/* Masque la barre de scroll sur Webkit (Chrome, Safari, Edge) */
+body::-webkit-scrollbar {
+    display: none; /* Cache la barre de scroll par défaut */
+}
+
+/* Conteneur de la barre de scroll personnalisée */
+.custom-scrollbar {
+    position: fixed; /* Position fixe pour rester visible */
+    right: 20px; /* Position à droite de l'écran */
+    top: 50%; /* Centre verticalement */
+    transform: translateY(-50%); /* Ajuste le centrage */
+    width: 60px; /* Largeur de la barre de scroll */
+    height: 300px; /* Hauteur de la barre de scroll */
+    background: linear-gradient(to bottom, #87CEEB, #4682B4); /* Dégradé bleu pour l'eau */
+    border-radius: 30px; /* Coins arrondis pour un look moderne */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ombre portée */
+    z-index: 1000; /* Place au-dessus de tout le contenu */
+    overflow: hidden; /* Cache le contenu qui dépasse */
+    border: 3px solid #fff; /* Bordure blanche */
+}
+
+/* Colonne d'eau */
+.water-column {
+    position: absolute; /* Position absolue dans le conteneur */
+    bottom: 0; /* Commence en bas */
+    left: 0; /* Aligné à gauche */
+    width: 100%; /* Largeur complète */
+    height: 100%; /* Hauteur complète */
+    background: linear-gradient(to bottom, transparent, rgba(135, 206, 235, 0.8)); /* Dégradé d'eau */
+    transition: height 0.3s ease; /* Animation fluide pour le changement de hauteur */
+}
+
+/* Canard flottant */
+.duck-scroll {
+    position: absolute; /* Position absolue dans le conteneur */
+    left: 50%; /* Centre horizontalement */
+    transform: translateX(-50%); /* Ajuste le centrage */
+    font-size: 24px; /* Taille de l'emoji canard */
+    transition: bottom 0.3s ease; /* Animation fluide pour le mouvement */
+    z-index: 2; /* Place au-dessus de l'eau */
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3)); /* Ombre portée sur le canard */
+}
+
+/* Effet de vague sur l'eau */
+.water-wave {
+    position: absolute; /* Position absolue */
+    bottom: 0; /* En bas de la colonne d'eau */
+    left: 0; /* Aligné à gauche */
+    width: 100%; /* Largeur complète */
+    height: 20px; /* Hauteur de la vague */
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.3), transparent); /* Effet de vague */
+    border-radius: 50% 50% 0 0; /* Forme de vague */
+    animation: wave 2s ease-in-out infinite; /* Animation de vague continue */
+}
+
+@keyframes wave {
+    0%, 100% { 
+        transform: translateX(0) scaleY(1); /* Position normale */
+    }
+    50% { 
+        transform: translateX(5px) scaleY(1.2); /* Mouvement de vague */
+    }
+}
+
+/* Indicateur de position */
+.scroll-indicator {
+    position: absolute; /* Position absolue */
+    top: 10px; /* En haut du conteneur */
+    left: 50%; /* Centre horizontalement */
+    transform: translateX(-50%); /* Ajuste le centrage */
+    font-size: 12px; /* Petite taille de police */
+    color: #fff; /* Texte blanc */
+    background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    padding: 2px 6px; /* Espacement interne */
+    border-radius: 10px; /* Coins arrondis */
+    z-index: 3; /* Place au-dessus de tout */
+}
+
+/* Animation de flottement du canard */
+@keyframes float {
+    0%, 100% { 
+        transform: translateX(-50%) translateY(0px); /* Position normale */
+    }
+    50% { 
+        transform: translateX(-50%) translateY(-3px); /* Légère élévation */
+    }
+}
+
+.duck-scroll {
+    animation: float 2s ease-in-out infinite; /* Animation de flottement continue */
+}
+
+/* Responsive pour la barre de scroll */
+@media (max-width: 768px) {
+    .custom-scrollbar {
+        right: 10px; /* Plus proche du bord sur mobile */
+        width: 50px; /* Largeur réduite sur mobile */
+        height: 250px; /* Hauteur réduite sur mobile */
+    }
+    
+    .duck-scroll {
+        font-size: 20px; /* Taille réduite sur mobile */
+    }
 }
 
 .container {
