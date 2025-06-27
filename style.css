@@ -1,288 +1,289 @@
 /* ===== RÉINITIALISATION ET STYLES DE BASE ===== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* Supprime toutes les marges par défaut */
+    padding: 0; /* Supprime tout le padding par défaut */
+    box-sizing: border-box; /* Inclut padding et border dans la largeur/hauteur totale */
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police de caractères moderne et lisible */
+    line-height: 1.6; /* Espacement entre les lignes pour une meilleure lisibilité */
+    color: #333; /* Couleur de texte gris foncé */
+    background-color: #f8f9fa; /* Couleur de fond gris très clair */
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 1200px; /* Largeur maximale pour éviter que le contenu soit trop large */
+    margin: 0 auto; /* Centre le conteneur horizontalement */
+    padding: 0 20px; /* Espacement horizontal pour éviter que le contenu touche les bords */
 }
 
 /* ===== EN-TÊTE JAUNE CANARI ===== */
 .header {
-    background: linear-gradient(135deg, #ffeb3b, #ffc107); /* Dégradé jaune canari */
-    color: #333;
-    padding: 40px 0;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
-    position: relative;
-    overflow: hidden;
+    background: linear-gradient(135deg, #ffeb3b, #ffc107); /* Dégradé jaune canari en diagonale */
+    color: #333; /* Couleur de texte sombre pour contraster avec le fond jaune */
+    padding: 40px 0; /* Espacement vertical pour donner de l'air au header */
+    text-align: center; /* Centre le texte horizontalement */
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3); /* Ombre portée jaune pour l'effet de profondeur */
+    position: relative; /* Position relative pour les éléments enfants absolus */
+    overflow: hidden; /* Cache les éléments qui dépassent du header */
 }
 
 /* Effet de brillance sur le header */
 .header::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    animation: shine 3s infinite;
+    content: ''; /* Crée un élément pseudo sans contenu */
+    position: absolute; /* Position absolue par rapport au header */
+    top: -50%; /* Place l'élément au-dessus du header */
+    left: -50%; /* Place l'élément à gauche du header */
+    width: 200%; /* Largeur double pour couvrir tout le header */
+    height: 200%; /* Hauteur double pour couvrir tout le header */
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent); /* Dégradé de brillance */
+    animation: shine 3s infinite; /* Animation de brillance qui se répète toutes les 3 secondes */
 }
 
 @keyframes shine {
-    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); } /* Position initiale de l'effet de brillance */
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); } /* Position finale de l'effet de brillance */
 }
 
 .header h1 {
-    font-size: 3.5rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 1;
+    font-size: 3.5rem; /* Taille de police très grande pour le titre principal */
+    margin-bottom: 10px; /* Espacement sous le titre */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Ombre de texte pour la profondeur */
+    position: relative; /* Position relative pour être au-dessus de l'effet de brillance */
+    z-index: 1; /* Place le titre au-dessus de l'effet de brillance */
 }
 
 .header .subtitle {
-    font-size: 1.2rem;
-    opacity: 0.8;
-    position: relative;
-    z-index: 1;
+    font-size: 1.2rem; /* Taille de police moyenne pour le sous-titre */
+    opacity: 0.8; /* Transparence légère pour un effet subtil */
+    position: relative; /* Position relative pour être au-dessus de l'effet de brillance */
+    z-index: 1; /* Place le sous-titre au-dessus de l'effet de brillance */
 }
 
 /* ===== CONTENU PRINCIPAL ===== */
 .main-content {
-    padding: 60px 0;
+    padding: 60px 0; /* Espacement vertical important pour séparer le header du contenu */
 }
 
 /* Section d'introduction */
 .intro-section {
-    text-align: center;
-    margin-bottom: 60px;
-    padding: 40px;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centre le texte de la section d'introduction */
+    margin-bottom: 60px; /* Espacement important sous la section */
+    padding: 40px; /* Espacement interne pour donner de l'air au contenu */
+    background: white; /* Fond blanc pour contraster avec le fond gris de la page */
+    border-radius: 15px; /* Coins arrondis pour un design moderne */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Ombre portée pour l'effet de carte flottante */
 }
 
 .intro-section h2 {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 20px;
+    font-size: 2.5rem; /* Taille de police grande pour le titre de section */
+    color: #2c3e50; /* Couleur bleu foncé pour les titres */
+    margin-bottom: 20px; /* Espacement sous le titre */
 }
 
 .intro-section p {
-    font-size: 1.1rem;
-    color: #666;
-    max-width: 800px;
-    margin: 0 auto;
+    font-size: 1.1rem; /* Taille de police légèrement plus grande que la normale */
+    color: #666; /* Couleur grise pour le texte secondaire */
+    max-width: 800px; /* Largeur maximale pour une meilleure lisibilité */
+    margin: 0 auto; /* Centre le paragraphe horizontalement */
 }
 
 /* Grille des caractéristiques */
 .features-section {
-    margin-bottom: 60px;
+    margin-bottom: 60px; /* Espacement important sous la section */
 }
 
 .features-section h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 40px;
+    text-align: center; /* Centre le titre de section */
+    font-size: 2.5rem; /* Taille de police grande pour le titre */
+    color: #2c3e50; /* Couleur bleu foncé pour les titres */
+    margin-bottom: 40px; /* Espacement sous le titre */
 }
 
 .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px;
+    display: grid; /* Utilise CSS Grid pour organiser les cartes */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colonnes adaptatives avec largeur minimale */
+    gap: 30px; /* Espacement entre les cartes */
+    margin-bottom: 40px; /* Espacement sous la grille */
 }
 
 .feature-card {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-left: 5px solid #ffc107;
+    background: white; /* Fond blanc pour les cartes */
+    padding: 30px; /* Espacement interne important */
+    border-radius: 15px; /* Coins arrondis pour un design moderne */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Ombre portée pour l'effet de carte flottante */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation fluide au survol */
+    border-left: 5px solid #ffc107; /* Bordure jaune à gauche pour l'accent */
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px); /* Déplace la carte vers le haut au survol */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Ombre plus prononcée au survol */
 }
 
 .feature-card h3 {
-    font-size: 1.5rem;
-    color: #2c3e50;
-    margin-bottom: 15px;
+    font-size: 1.5rem; /* Taille de police moyenne pour les titres de cartes */
+    color: #2c3e50; /* Couleur bleu foncé pour les titres */
+    margin-bottom: 15px; /* Espacement sous le titre */
 }
 
 .feature-card p {
-    color: #666;
-    line-height: 1.6;
+    color: #666; /* Couleur grise pour le texte secondaire */
+    line-height: 1.6; /* Espacement entre les lignes pour la lisibilité */
 }
 
 /* Section des espèces */
 .species-section {
-    margin-bottom: 60px;
+    margin-bottom: 60px; /* Espacement important sous la section */
 }
 
 .species-section h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 40px;
+    text-align: center; /* Centre le titre de section */
+    font-size: 2.5rem; /* Taille de police grande pour le titre */
+    color: #2c3e50; /* Couleur bleu foncé pour les titres */
+    margin-bottom: 40px; /* Espacement sous le titre */
 }
 
 .species-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    display: grid; /* Utilise CSS Grid pour organiser les espèces */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colonnes adaptatives avec largeur minimale */
+    gap: 30px; /* Espacement entre les éléments */
 }
 
 .species-item {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    border-top: 4px solid #ffc107;
+    background: white; /* Fond blanc pour les cartes d'espèces */
+    padding: 25px; /* Espacement interne */
+    border-radius: 15px; /* Coins arrondis pour un design moderne */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Ombre portée pour l'effet de carte flottante */
+    transition: transform 0.3s ease; /* Animation fluide au survol */
+    border-top: 4px solid #ffc107; /* Bordure jaune en haut pour l'accent */
 }
 
 .species-item:hover {
-    transform: translateY(-3px);
+    transform: translateY(-3px); /* Déplace la carte vers le haut au survol */
 }
 
 .species-item h3 {
-    font-size: 1.4rem;
-    color: #2c3e50;
-    margin-bottom: 10px;
+    font-size: 1.4rem; /* Taille de police moyenne pour les noms d'espèces */
+    color: #2c3e50; /* Couleur bleu foncé pour les titres */
+    margin-bottom: 10px; /* Espacement sous le titre */
 }
 
 .species-item p {
-    color: #666;
+    color: #666; /* Couleur grise pour le texte secondaire */
 }
 
 /* Section des faits amusants */
 .fun-facts-section {
-    background: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
+    background: white; /* Fond blanc pour la section */
+    padding: 40px; /* Espacement interne important */
+    border-radius: 15px; /* Coins arrondis pour un design moderne */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Ombre portée pour l'effet de carte flottante */
+    margin-bottom: 40px; /* Espacement sous la section */
 }
 
 .fun-facts-section h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 30px;
+    text-align: center; /* Centre le titre de section */
+    font-size: 2.5rem; /* Taille de police grande pour le titre */
+    color: #2c3e50; /* Couleur bleu foncé pour les titres */
+    margin-bottom: 30px; /* Espacement sous le titre */
 }
 
 .fun-facts-list {
-    list-style: none;
-    padding: 0;
+    list-style: none; /* Supprime les puces par défaut de la liste */
+    padding: 0; /* Supprime le padding par défaut de la liste */
 }
 
 .fun-facts-list li {
-    padding: 15px 0;
-    border-bottom: 1px solid #eee;
-    position: relative;
-    padding-left: 30px;
-    font-size: 1.1rem;
-    color: #555;
+    padding: 15px 0; /* Espacement vertical pour chaque élément */
+    border-bottom: 1px solid #eee; /* Ligne de séparation entre les éléments */
+    position: relative; /* Position relative pour l'emoji absolu */
+    padding-left: 30px; /* Espacement à gauche pour l'emoji */
+    font-size: 1.1rem; /* Taille de police légèrement plus grande */
+    color: #555; /* Couleur grise pour le texte */
 }
 
 .fun-facts-list li:last-child {
-    border-bottom: none;
+    border-bottom: none; /* Supprime la bordure du dernier élément */
 }
 
 .fun-facts-list li::before {
-    content: '🦆';
-    position: absolute;
-    left: 0;
-    top: 15px;
-    font-size: 1.2rem;
+    content: '🦆'; /* Ajoute un emoji de canard avant chaque élément */
+    position: absolute; /* Position absolue par rapport à l'élément */
+    left: 0; /* Place l'emoji à gauche */
+    top: 15px; /* Aligne l'emoji verticalement */
+    font-size: 1.2rem; /* Taille de l'emoji */
 }
 
 /* ===== PIED DE PAGE ===== */
 .footer {
-    background: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 30px 0;
-    margin-top: 60px;
+    background: #2c3e50; /* Fond bleu foncé pour le pied de page */
+    color: white; /* Texte blanc pour contraster avec le fond sombre */
+    text-align: center; /* Centre le texte */
+    padding: 30px 0; /* Espacement vertical */
+    margin-top: 60px; /* Espacement au-dessus du pied de page */
 }
 
 .footer p {
-    opacity: 0.8;
+    opacity: 0.8; /* Légère transparence pour un effet subtil */
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
+    /* Styles appliqués uniquement sur les écrans de moins de 768px de largeur */
     .header h1 {
-        font-size: 2.5rem;
+        font-size: 2.5rem; /* Taille de police réduite sur mobile */
     }
     
     .header .subtitle {
-        font-size: 1rem;
+        font-size: 1rem; /* Taille de police réduite sur mobile */
     }
     
     .intro-section h2,
     .features-section h2,
     .species-section h2,
     .fun-facts-section h2 {
-        font-size: 2rem;
+        font-size: 2rem; /* Taille de police réduite pour tous les titres H2 sur mobile */
     }
     
     .features-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
     }
     
     .species-list {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
     }
     
     .container {
-        padding: 0 15px;
+        padding: 0 15px; /* Espacement réduit sur mobile */
     }
     
     .intro-section,
     .fun-facts-section {
-        padding: 25px;
+        padding: 25px; /* Espacement interne réduit sur mobile */
     }
 }
 
 /* ===== ANIMATIONS ET EFFETS ===== */
 @keyframes fadeInUp {
     from {
-        opacity: 0;
-        transform: translateY(30px);
+        opacity: 0; /* Commence invisible */
+        transform: translateY(30px); /* Commence 30px plus bas */
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+        opacity: 1; /* Devient visible */
+        transform: translateY(0); /* Remonte à sa position normale */
     }
 }
 
 .feature-card,
 .species-item {
-    animation: fadeInUp 0.6s ease-out;
+    animation: fadeInUp 0.6s ease-out; /* Animation d'apparition en montant */
 }
 
-/* Effet de survol pour les cartes */
-.feature-card:nth-child(1) { animation-delay: 0.1s; }
-.feature-card:nth-child(2) { animation-delay: 0.2s; }
-.feature-card:nth-child(3) { animation-delay: 0.3s; }
-.feature-card:nth-child(4) { animation-delay: 0.4s; }
+/* Effet de survol pour les cartes avec délais différents */
+.feature-card:nth-child(1) { animation-delay: 0.1s; } /* Première carte avec délai de 0.1s */
+.feature-card:nth-child(2) { animation-delay: 0.2s; } /* Deuxième carte avec délai de 0.2s */
+.feature-card:nth-child(3) { animation-delay: 0.3s; } /* Troisième carte avec délai de 0.3s */
+.feature-card:nth-child(4) { animation-delay: 0.4s; } /* Quatrième carte avec délai de 0.4s */
