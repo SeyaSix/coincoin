@@ -394,3 +394,78 @@ body::-webkit-scrollbar {
 .feature-card:nth-child(2) { animation-delay: 0.2s; } /* Deuxième carte avec délai de 0.2s */
 .feature-card:nth-child(3) { animation-delay: 0.3s; } /* Troisième carte avec délai de 0.3s */
 .feature-card:nth-child(4) { animation-delay: 0.4s; } /* Quatrième carte avec délai de 0.4s */
+
+/* ===== MODALE POUR L'AFFICHAGE DE L'IMAGE DE DONALD ===== */
+.modal {
+    display: none; /* Cachée par défaut */
+    position: fixed; /* Position fixe sur tout l'écran */
+    z-index: 2000; /* Au-dessus de tout le reste */
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto; /* Scroll si besoin */
+    background-color: rgba(0,0,0,0.5); /* Fond sombre semi-transparent */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 60px auto;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 400px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    position: relative;
+    animation: modalIn 0.3s;
+}
+
+@keyframes modalIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-modal {
+    color: #333;
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.close-modal:hover {
+    color: #e74c3c;
+}
+
+/* ===== STYLES POUR LE LIEN DONALD ===== */
+#donald-link {
+    color: #ff6b35; /* Couleur orange vif pour attirer l'attention */
+    text-decoration: underline; /* Soulignement pour indiquer que c'est un lien */
+    font-weight: bold; /* Texte en gras pour plus de visibilité */
+    transition: all 0.3s ease; /* Animation fluide pour les changements */
+    cursor: pointer; /* Curseur pointer pour indiquer que c'est cliquable */
+    padding: 2px 4px; /* Espacement interne pour un effet de bouton */
+    border-radius: 4px; /* Coins arrondis */
+    background: linear-gradient(45deg, #ff6b35, #ff8c42); /* Dégradé orange */
+    -webkit-background-clip: text; /* Pour appliquer le dégradé au texte */
+    -webkit-text-fill-color: transparent; /* Rend le texte transparent pour voir le dégradé */
+    background-clip: text; /* Version standard pour le dégradé de texte */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+#donald-link:hover {
+    color: #e55a2b; /* Couleur plus foncée au survol */
+    text-decoration: none; /* Supprime le soulignement au survol */
+    background: linear-gradient(45deg, #e55a2b, #ff6b35); /* Dégradé plus foncé au survol */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: scale(1.05); /* Légère augmentation de taille */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
+}
+
+#donald-link:active {
+    transform: scale(0.95); /* Réduction de taille lors du clic */
+    transition: transform 0.1s ease; /* Animation rapide pour le clic */
+}

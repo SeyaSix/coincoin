@@ -5,6 +5,29 @@ const customScrollbar = document.querySelector('.custom-scrollbar');
 const waterColumn = document.querySelector('.water-column');
 const duckScroll = document.querySelector('.duck-scroll');
 
+// ===== MODALE DONALD =====
+const donaldLink = document.getElementById('donald-link');
+const donaldModal = document.getElementById('donald-modal');
+const closeModal = document.getElementById('close-modal');
+
+if (donaldLink && donaldModal && closeModal) {
+    // Ouvre la modale au clic sur le lien
+    donaldLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        donaldModal.style.display = 'block';
+    });
+    // Ferme la modale au clic sur la croix
+    closeModal.addEventListener('click', function() {
+        donaldModal.style.display = 'none';
+    });
+    // Ferme la modale au clic en dehors du contenu
+    window.addEventListener('click', function(event) {
+        if (event.target === donaldModal) {
+            donaldModal.style.display = 'none';
+        }
+    });
+}
+
 // Fonction pour mettre à jour la position du canard et de l'eau
 function updateScrollPosition() {
     // Calcul du pourcentage de scroll (0 à 100)
