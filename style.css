@@ -1,0 +1,288 @@
+/* ===== RÉINITIALISATION ET STYLES DE BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== EN-TÊTE JAUNE CANARI ===== */
+.header {
+    background: linear-gradient(135deg, #ffeb3b, #ffc107); /* Dégradé jaune canari */
+    color: #333;
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effet de brillance sur le header */
+.header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.header .subtitle {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== CONTENU PRINCIPAL ===== */
+.main-content {
+    padding: 60px 0;
+}
+
+/* Section d'introduction */
+.intro-section {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.intro-section h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.intro-section p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Grille des caractéristiques */
+.features-section {
+    margin-bottom: 60px;
+}
+
+.features-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid #ffc107;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Section des espèces */
+.species-section {
+    margin-bottom: 60px;
+}
+
+.species-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+.species-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.species-item {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border-top: 4px solid #ffc107;
+}
+
+.species-item:hover {
+    transform: translateY(-3px);
+}
+
+.species-item h3 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.species-item p {
+    color: #666;
+}
+
+/* Section des faits amusants */
+.fun-facts-section {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.fun-facts-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.fun-facts-list {
+    list-style: none;
+    padding: 0;
+}
+
+.fun-facts-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 30px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.fun-facts-list li:last-child {
+    border-bottom: none;
+}
+
+.fun-facts-list li::before {
+    content: '🦆';
+    position: absolute;
+    left: 0;
+    top: 15px;
+    font-size: 1.2rem;
+}
+
+/* ===== PIED DE PAGE ===== */
+.footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+}
+
+.footer p {
+    opacity: 0.8;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .header .subtitle {
+        font-size: 1rem;
+    }
+    
+    .intro-section h2,
+    .features-section h2,
+    .species-section h2,
+    .fun-facts-section h2 {
+        font-size: 2rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .species-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .intro-section,
+    .fun-facts-section {
+        padding: 25px;
+    }
+}
+
+/* ===== ANIMATIONS ET EFFETS ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature-card,
+.species-item {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Effet de survol pour les cartes */
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.2s; }
+.feature-card:nth-child(3) { animation-delay: 0.3s; }
+.feature-card:nth-child(4) { animation-delay: 0.4s; }
